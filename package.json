@@ -1,0 +1,15 @@
+{
+  "name": "wdio-testing",
+  "version": "1.0.0",
+  "description": "Automated Testing with WebdriverIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Automation",
+    "Webdriver"
+  ],
+  "author": "William .J Bashelor <wbashelor@gmail.com>",
+  "license": "MIT"
+}
