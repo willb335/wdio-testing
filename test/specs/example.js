@@ -18,4 +18,10 @@ describe("First steps with WebdriverIO", () => {
 
     expect(p).toBeVisible();
   });
+
+  it("Checks link value", () => {
+    const link = $("a");
+
+    expect(link).toHaveLink("https://www.iana.org/domains/example");
+  });
 });
