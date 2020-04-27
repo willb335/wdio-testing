@@ -7,8 +7,15 @@ describe("First steps with WebdriverIO", () => {
     expect(browser).toHaveTitle("Example Domain");
   });
 
-  // it("Loads Webdriver's website", () => {
-  //   browser.url("https://webdriver.io");
-  //   browser.pause(3000);
-  // });
+  it("Has a visible h1", () => {
+    const h1 = $("h1");
+
+    expect(h1).toBeVisible();
+  });
+
+  it("Has a visible p", () => {
+    const p = $("p");
+
+    expect(p).toBeVisible();
+  });
 });
