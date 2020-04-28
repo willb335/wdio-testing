@@ -16,7 +16,7 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
-  specs: ['./test/specs/**/e2e-help.js'],
+  specs: ['./test/specs/**/e2e-feedback.js'],
   // Patterns to exclude.
   exclude: ['./test/specs/example.js', './test/specs/actions.js'],
   //

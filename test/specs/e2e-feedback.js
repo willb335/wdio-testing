@@ -1,6 +1,9 @@
+const { openHomepage } = require('../../page-objects/App');
+
 describe('E2E - Feedback', () => {
   it('Should load feedback form', () => {
-    browser.url('http://zero.webappsecurity.com/index.html');
+    openHomepage();
+    // browser.url('http://zero.webappsecurity.com/index.html');
     $('#feedback').waitForExist();
     $('#feedback').click();
     $('form').waitForExist();
