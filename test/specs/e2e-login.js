@@ -15,7 +15,7 @@ describe('E2E Tests - Login / Logout', () => {
     logInForm.waitForExist();
     userLogin.setValue('invalid');
     userPassword.setValue('invalid');
-    browser.pause(short);
+    // browser.pause(short);
     submit.click();
     const error = $('.alert-error');
     expect(error).toHaveText('Login and/or password are wrong.');
@@ -35,7 +35,7 @@ describe('E2E Tests - Login / Logout', () => {
     logInForm.waitForExist();
     userLogin.setValue('username');
     userPassword.setValue('password');
-    browser.pause(short);
+    // browser.pause(short);
     submit.click();
     navTabs.waitForExist();
   });
@@ -45,7 +45,7 @@ describe('E2E Tests - Login / Logout', () => {
     $('.icon-user').click();
     $('#logout_link').waitForExist();
     $('#logout_link').click();
-    browser.pause(short);
+    // browser.pause(short);
     $('#pages-nav').waitForExist();
   });
 });

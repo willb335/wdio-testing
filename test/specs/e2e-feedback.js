@@ -7,6 +7,7 @@ describe('E2E - Feedback', () => {
   });
 
   it('Should submit feedback form', () => {
+    $('#name').click();
     $('#name').setValue('Name');
     $('#email').setValue('test@test.com');
     $('#subject').setValue('Subjects');
