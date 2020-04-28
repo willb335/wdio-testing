@@ -42,4 +42,10 @@ describe("First steps with WebdriverIO", () => {
     button.waitForExist();
     expect(button).toHaveAttrContaining("type", "submit");
   });
+
+  it("Asserts value", () => {
+    const button = $("#populate");
+    button.waitForExist();
+    expect(button).toHaveValue("Populate");
+  });
 });
