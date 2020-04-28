@@ -1,7 +1,9 @@
+const timeouts = require("../../lib/timeouts");
+
 describe("First steps with WebdriverIO", () => {
   it("Loads example.com", () => {
     browser.url("http://www.example.com");
-    browser.pause(3000);
+    browser.pause(timeouts.short);
 
     expect(browser).toHaveUrl("http://www.example.com/");
     expect(browser).toHaveTitle("Example Domain");
@@ -47,5 +49,14 @@ describe("First steps with WebdriverIO", () => {
     const button = $("#populate");
     button.waitForExist();
     expect(button).toHaveValue("Populate");
+  });
+
+  it("Saves screenshot", () => {
+    browser.saveScreenshot("your-name.png");
+  });
+
+  it("Changes browser viewport", () => {
+    browser.setWindowSize(800, 600);
+    browser.pause(timeouts.short);
   });
 });
