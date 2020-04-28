@@ -19,16 +19,24 @@ describe('Browser Actions', () => {
   //   populateButton.click();
   // });
 
-  it('Clicks checkbox and radio button', () => {
-    browser.url('https://devexpress.github.io/testcafe/example/');
-    const radio = $('#linux');
-    radio.waitForExist();
-    radio.click();
-    radio.pause(short);
+  // it('Clicks checkbox and radio button', () => {
+  //   browser.url('https://devexpress.github.io/testcafe/example/');
+  //   const radio = $('#linux');
+  //   radio.waitForExist();
+  //   radio.click();
+  //   radio.pause(short);
+  //
+  //   const checkbox = $('#remote-testing');
+  //   checkbox.waitForExist();
+  //   checkbox.click();
+  //   browser.pause(short);
+  // });
 
-    const checkbox = $('#remote-testing');
-    checkbox.waitForExist();
-    checkbox.click();
+  it('Selects from select box', () => {
+    browser.url('https://devexpress.github.io/testcafe/example/');
+    const select = $('#preferred-interface');
+    select.waitForExist();
+    select.selectByVisibleText('JavaScript API');
     browser.pause(short);
   });
 });
