@@ -1,9 +1,10 @@
-const timeouts = require("../../lib/timeouts");
+const { short } = require("../../lib/timeouts");
+const { mobile, tablet, desktop } = require("../../lib/devices");
 
 describe("First steps with WebdriverIO", () => {
   it("Loads example.com", () => {
     browser.url("http://www.example.com");
-    browser.pause(timeouts.short);
+    browser.pause(short);
 
     expect(browser).toHaveUrl("http://www.example.com/");
     expect(browser).toHaveTitle("Example Domain");
@@ -57,6 +58,21 @@ describe("First steps with WebdriverIO", () => {
 
   it("Changes browser viewport", () => {
     browser.setWindowSize(800, 600);
-    browser.pause(timeouts.short);
+    browser.pause(short);
+  });
+
+  it("Sets mobile view", () => {
+    browser.setWindowSize(mobile[0], mobile[1]);
+    browser.pause(short);
+  });
+
+  it("Sets tablet view", () => {
+    browser.setWindowSize(tablet[0], tablet[1]);
+    browser.pause(short);
+  });
+
+  it("Sets desktop view", () => {
+    browser.setWindowSize(desktop[0], desktop[1]);
+    browser.pause(short);
   });
 });
