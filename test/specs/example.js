@@ -35,4 +35,11 @@ describe("First steps with WebdriverIO", () => {
     element.waitForExist();
     expect(element).toHaveText("Example Domain");
   });
+
+  it("Asserts attribute", () => {
+    browser.url("https://devexpress.github.io/testcafe/example/");
+    const button = $("#submit-button");
+    button.waitForExist();
+    expect(button).toHaveAttrContaining("type", "submit");
+  });
 });
