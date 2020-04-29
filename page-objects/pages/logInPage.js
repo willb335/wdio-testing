@@ -21,6 +21,11 @@ class LoginPage {
   submitForm() {
     return this.submitButton.click();
   }
+
+  fillForm(username, password) {
+    this.userNameInput.setValue(username);
+    this.passwordInput.setValue(password);
+  }
 }
 
 export default new LoginPage();
