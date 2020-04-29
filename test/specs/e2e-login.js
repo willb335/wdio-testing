@@ -1,5 +1,7 @@
-const { short } = require('../../lib/timeouts');
-const { formIsVisible } = require('../../page-objects/pages/logInPage');
+// const { short } = require('../../lib/timeouts');
+// const LoginPage = require('../../page-objects/pages/LoginPage');
+import LoginPage from '../../page-objects/pages/LoginPage';
+import { short } from '../../lib/timeouts';
 
 describe('E2E Tests - Login / Logout', () => {
   it('Does not login with invalid credentials', () => {
@@ -13,8 +15,8 @@ describe('E2E Tests - Login / Logout', () => {
     browser.url('http://zero.webappsecurity.com/index.html');
     signInButton.waitForExist();
     signInButton.click();
-    // logInForm.waitForExist();
-    formIsVisible();
+    logInForm.waitForExist();
+    // LoginPage.formIsVisible();
     userLogin.setValue('invalid');
     userPassword.setValue('invalid');
     browser.pause(short);
