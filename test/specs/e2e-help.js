@@ -11,19 +11,13 @@ describe('E2E Testing - Help Section', () => {
   });
 
   it('loads help content', () => {
-    // $('.icon-cog').click();
     Navbar.clickSettings();
-    // $('#help_link').waitForExist();
-    // $('#help_link').click();
     Navbar.clickHelp();
-    // const title = $('.span8 > h3');
     expect(HelpPage.title).toHaveText('How do I log into my account?');
 
-    // $('*=transfer funds').click();
     HelpPage.clickOnTransferFunds();
     expect(HelpPage.title).toHaveText('How do I transfer funds?');
 
-    // $('*=pay bills').click();
     HelpPage.clickOnPayBills();
     expect(HelpPage.title).toHaveText('How do I pay bills?');
   });

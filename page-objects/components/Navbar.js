@@ -1,6 +1,9 @@
 import Base from '../Base';
 
 class Navbar extends Base {
+  get searchbox() {
+    return $('#searchTerm');
+  }
   get signInButton() {
     return $('#signin_button');
   }
@@ -12,6 +15,12 @@ class Navbar extends Base {
   }
   get helpButton() {
     return $('#help_link');
+  }
+
+  search(text) {
+    this.searchbox.waitForExist();
+    this.searchbox.setValue(text);
+    browser.keys('Enter');
   }
 
   signInButtonIsVisible() {
