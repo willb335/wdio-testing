@@ -15,7 +15,7 @@ class LoginPage {
   }
 
   formIsVisible() {
-    return this.logInForm.waitForExist();
+    return this.loginForm.waitForExist();
   }
 
   submitForm() {

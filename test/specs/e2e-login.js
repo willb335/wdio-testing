@@ -15,8 +15,8 @@ describe('E2E Tests - Login / Logout', () => {
     browser.url('http://zero.webappsecurity.com/index.html');
     signInButton.waitForExist();
     signInButton.click();
-    logInForm.waitForExist();
-    // LoginPage.formIsVisible();
+    // logInForm.waitForExist();
+    LoginPage.formIsVisible();
     userLogin.setValue('invalid');
     userPassword.setValue('invalid');
     browser.pause(short);
@@ -39,7 +39,7 @@ describe('E2E Tests - Login / Logout', () => {
     logInForm.waitForExist();
     userLogin.setValue('username');
     userPassword.setValue('password');
-    browser.pause(short);
+    // browser.pause(short);
     submit.click();
     navTabs.waitForExist();
   });
@@ -49,7 +49,7 @@ describe('E2E Tests - Login / Logout', () => {
     $('.icon-user').click();
     $('#logout_link').waitForExist();
     $('#logout_link').click();
-    browser.pause(short);
+    // browser.pause(short);
     $('#pages-nav').waitForExist();
   });
 });
