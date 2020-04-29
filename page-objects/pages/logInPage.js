@@ -13,6 +13,9 @@ class LoginPage {
   get submitButton() {
     return $('input[type="submit"]');
   }
+  get error() {
+    return $('.alert-error');
+  }
 
   formIsVisible() {
     return this.loginForm.waitForExist();
