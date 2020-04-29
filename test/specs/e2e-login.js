@@ -1,17 +1,18 @@
-// const { short } = require('../../lib/timeouts');
-// const LoginPage = require('../../page-objects/pages/LoginPage');
+import App from '../../page-objects/App';
 import LoginPage from '../../page-objects/pages/LoginPage';
 import { short } from '../../lib/timeouts';
+import Navbar from '../../page-objects/components/Navbar';
 
 describe('E2E Tests - Login / Logout', () => {
   it('Does not login with invalid credentials', () => {
     const signInButton = $('#signin_button');
     const navTabs = $('.nav-tabs');
 
-    browser.url('http://zero.webappsecurity.com/index.html');
-    signInButton.waitForExist();
-    signInButton.click();
-    // logInForm.waitForExist();
+    // browser.url('http://zero.webappsecurity.com/index.html');
+    App.openHomepage();
+    // signInButton.waitForExist();
+    // signInButton.click();
+    Navbar.clickSignIn();
     LoginPage.formIsVisible();
     LoginPage.fillForm('invalid', 'invalid');
     LoginPage.submitForm();
@@ -25,9 +26,11 @@ describe('E2E Tests - Login / Logout', () => {
     const signInButton = $('#signin_button');
     const navTabs = $('.nav-tabs');
 
-    browser.url('http://zero.webappsecurity.com/index.html');
-    signInButton.waitForExist();
-    signInButton.click();
+    // browser.url('http://zero.webappsecurity.com/index.html');
+    App.openHomepage();
+    // signInButton.waitForExist();
+    // signInButton.click();
+    Navbar.clickSignIn();
     LoginPage.formIsVisible();
     LoginPage.fillForm('username', 'password');
     LoginPage.submitForm();
