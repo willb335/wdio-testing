@@ -1,21 +1,14 @@
+import App from '../../page-objects/App';
+import LoginPage from '../../page-objects/pages/LoginPage';
+import Navbar from '../../page-objects/components/Navbar';
+
 describe('E2E Testing - Help Section', () => {
   it('Logs into account', () => {
-    const signInButton = $('#signin_button');
-    const logInForm = $('#login_form');
-    const userLogin = $('#user_login');
-    const userPassword = $('#user_password');
-    const submit = $('input[type="submit"]');
-    const navTabs = $('.nav-tabs');
-
-    browser.url('http://zero.webappsecurity.com/index.html');
-    signInButton.waitForExist();
-    signInButton.click();
-    logInForm.waitForExist();
-    userLogin.setValue('username');
-    userPassword.setValue('password');
-    // browser.pause(short);
-    submit.click();
-    navTabs.waitForExist();
+    App.openLoginPage();
+    LoginPage.formIsVisible();
+    LoginPage.fillForm('username', 'password');
+    LoginPage.submitForm();
+    Navbar.insideNavbarIsVisible();
   });
 
   it('loads help content', () => {

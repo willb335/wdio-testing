@@ -29,6 +29,13 @@ class LoginPage {
     this.userNameInput.setValue(username);
     this.passwordInput.setValue(password);
   }
+
+  login(username, password) {
+    this.loginForm.waitForExist();
+    this.userNameInput.setValue(username);
+    this.passwordInput.setValue(password);
+    this.submitButton.click();
+  }
 }
 
 export default new LoginPage();
