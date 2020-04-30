@@ -106,9 +106,10 @@ class InsideNavbar extends Base {
     this.denominateInDollars.waitForExist();
     this.denominateInDollars.click();
   }
-  clickPurchaseCash() {
-    this.purchaseCash.waitForExist();
-    this.purchaseCash.click();
+  clickPurchaseCash(selector) {
+    // this.purchaseCash.waitForExist();
+    // this.purchaseCash.click();
+    browser.waitAndClick(selector);
   }
 }
 

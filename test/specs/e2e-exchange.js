@@ -26,7 +26,7 @@ describe('E2E Tests - Currency Exchange', () => {
     // $('#pc_inDollars_true').click();
     InsideNavbar.clickDenominateInDollars();
     // $('#purchase_cash').click();
-    InsideNavbar.clickPurchaseCash();
+    InsideNavbar.clickPurchaseCash('#purchase_cash');
     // const message = $('#alert_content');
     expect(InsideNavbar.alertContent).toHaveText(
       'Foreign currency cash was successfully purchased.'

@@ -174,8 +174,16 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    browser.addCommand('waitAndClick', (selector) => {
+      try {
+        $(selector).waitForExist();
+        $(selector).click();
+      } catch (error) {
+        throw new Error(`Could not click the selector ${selector}`);
+      }
+    });
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
